@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    background:
+        linear-gradient(rgba(255, 240, 245, 0.62), rgba(255, 240, 245, 0.72)),
+        url("love-background.png") center 35% / cover fixed;
+    color: #f600b8;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: min(100%, 360px);
+    transform: translateX(40px);
+    padding: 32px;
+    border: 1px solid #f3c9d7;
+    border-radius: 12px;
+    background-color: rgba(255, 249, 251, 0.92);
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #b94f78;
+    text-align: center;
+}
+
+.calculator > p {
+    text-align: center;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e8b6c8;
+    border-radius: 6px;
+    font: inherit;
+}
+
+button {
+    margin-top: 8px;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #fe00cb;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d87398;
+}
+
+.result {
+    margin: 20px 0 0;
+    color: #9c4667;
+}
+
+.result-score {
+    display: block;
+    margin-top: 8px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.result-category {
+    display: block;
+    margin-top: 4px;
+    font-weight: 700;
+}

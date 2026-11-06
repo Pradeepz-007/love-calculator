@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple love calculator">
+    <title>Love Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="calculator">
+        <h1>Love Calculator</h1>
+        <p>Enter two names to see your compatibility.</p>
+
+        <form>
+            <label for="your-name">Your name</label>
+            <input id="your-name" name="your-name" type="text" placeholder="Enter your name" required>
+
+            <label for="their-name">Their name</label>
+            <input id="their-name" name="their-name" type="text" placeholder="Enter their name" required>
+
+            <button type="submit">Calculate love</button>
+        </form>
+
+        <p class="result" aria-live="polite">Your result will appear here.</p>
+    </main>
+
+    <script>
+        const form = document.querySelector("form");
+        const result = document.querySelector(".result");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const yourName = document.querySelector("#your-name").value.trim();
+            const theirName = document.querySelector("#their-name").value.trim();
+            const percentage = Math.floor(Math.random() * 101);
+            const score = document.createElement("span");
+            const category = document.createElement("span");
+            let categoryText;
+
+            if (percentage < 25) {
+                categoryText = "Strangers";
+            } else if (percentage < 50) {
+                categoryText = "Just friends";
+            } else if (percentage <= 75) {
+                categoryText = "Friends with a crush";
+            } else {
+                categoryText = "Marriage";
+            }
+
+            score.className = "result-score";
+            score.textContent = `${percentage}%`;
+            category.className = "result-category";
+            category.textContent = categoryText;
+            result.replaceChildren(
+                document.createTextNode(`${yourName} and ${theirName} have a love score of `),
+                score,
+                category,
+                document.createTextNode("!")
+            );
+        });
+    </script>
+</body>
+</html>
